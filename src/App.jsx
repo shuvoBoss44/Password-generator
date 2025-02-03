@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import "./App.css";
 
 function App() {
-  const [password, setPassword] = useState(null);
+  const [password, setPassword] = useState("");
   const [range, setRange] = useState(5);
   const [numbers, setNumbers] = useState(false);
   const [special, setSpecial] = useState(false);
