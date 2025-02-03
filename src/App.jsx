@@ -46,8 +46,8 @@ function App() {
               Copy
             </button>
           </div>
-          <div className="flex items-center justify-between">
-            <div>
+          <div className="flex items-center flex-col">
+            <div className="flex flex-col items-center">
               <input
                 type="range"
                 value={range}
@@ -56,7 +56,9 @@ function App() {
                 onChange={e => setRange(Number(e.target.value))}
                 className="mx-2"
               />
-              <label htmlFor="Range">Range: {range}</label>
+              <label htmlFor="Range">
+                Range: <span className="text-green-400">{range}</span>
+              </label>
             </div>
             <div>
               <label htmlFor="Numbers">Numbers: </label>
