@@ -5,19 +5,22 @@ function App() {
   const [password, setPassword] = useState(null);
   const [range, setRange] = useState(5);
   const [numbers, setNumbers] = useState(false);
+  const [special, setSpecial] = useState(false);
   const passRef = useRef();
 
   useEffect(() => {
     let pass = "";
     let abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     let num = "1234567890";
+    let char = "!@#$%&*";
     if (numbers) abc += num;
+    if (special) abc += char;
     for (let i = 0; i < range; i++) {
       var random = Math.floor(Math.random() * abc.length);
       pass += abc.charAt(random);
     }
     setPassword(pass);
-  }, [range, numbers]);
+  }, [range, numbers, special]);
 
   const copyText = useCallback(() => {
     passRef.current.select();
@@ -43,7 +46,7 @@ function App() {
               Copy
             </button>
           </div>
-          <div className="flex items-center gap-x-5">
+          <div className="flex items-center justify-between">
             <div>
               <input
                 type="range"
@@ -61,6 +64,14 @@ function App() {
                 type="checkbox"
                 checked={numbers}
                 onChange={() => setNumbers(prev => !prev)}
+              />
+            </div>
+            <div>
+              <label htmlFor="Specials">Specials: </label>
+              <input
+                type="checkbox"
+                checked={special}
+                onChange={() => setSpecial(prev => !prev)}
               />
             </div>
           </div>
