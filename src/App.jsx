@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <div className="flex justify-center items-center h-dvh">
-        <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 bg-gray-800 text-white">
+        <div className="w-full max-w-[600px] mx-auto shadow-md rounded-lg px-4 py-3 bg-gray-800 text-white">
           <div className="h-40 flex items-center justify-center">
             <input
               type="text"
@@ -56,12 +56,12 @@ function App() {
               <label htmlFor="Range">Range: {range}</label>
             </div>
             <div>
+              <label htmlFor="Numbers">Numbers: </label>
               <input
                 type="checkbox"
                 checked={numbers}
                 onChange={() => setNumbers(prev => !prev)}
               />
-              <label htmlFor="Numbers">Numbers: </label>
             </div>
           </div>
           <p className="text-center mt-4 text-gray-400">
